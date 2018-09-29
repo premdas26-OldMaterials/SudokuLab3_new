@@ -239,6 +239,19 @@ public class Sudoku extends LatinSquare {
 
 		return true;
 	}
+	
+	private void fillDiagonalRegions() {
+		int[] diagonal = new int[iSize];
+		for (int i = 0; i < iSize; i++) {
+			diagonal[i] = i;
+		}
+		shuffleArray(diagonal);
+		int [][] ls = super.getLatinSquare();
+		for (int i = 0; i < iSize, i++) {
+			ls[i][i] = diagonal[i];
+		}
+		super.setLatinSquare(ls);
+	}
 
 	/**
 	 * isValidValue - test to see if a given value would 'work' for a given column /
