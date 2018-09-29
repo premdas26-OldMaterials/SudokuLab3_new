@@ -4,6 +4,9 @@ import pkgEnum.ePuzzleViolation;
 import pkgHelper.LatinSquare;
 import pkgHelper.PuzzleViolation;
 
+import java.util.*;
+
+
 /**
  * Sudoku - This class extends LatinSquare, adding methods, constructor to
  * handle Sudoku logic
@@ -269,6 +272,17 @@ public class Sudoku extends LatinSquare {
 				System.out.print(super.getColumn(i)[j] + " ");
 			}
 			System.out.print("\n");
+		}
+	}
+	
+	private void shuffleArray(int[] ar) {
+		List<Integer> arAsList = new ArrayList<Integer>();
+		for(int i:ar) {
+			arAsList.add(i);
+		}
+		Collections.shuffle(arAsList);
+		for(int i = 0; i<ar.length;i++) {
+			ar[i] = arAsList.get(i);
 		}
 	}
 	
