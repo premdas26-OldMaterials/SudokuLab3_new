@@ -270,11 +270,38 @@ public class SudokuTest {
 			e.printStackTrace();
 		}
 		int ans[]= {1,2,3,4};
-		s.setRegion(3);
+		s.SetRegion(3);
 		
 		assertTrue(Arrays.equals(s.getRegion(3), ans));
 		
 	}
+	
+	@Test
+	public void TestShuffleRegion() {
+		int[][] puzzle = { { 1, 2, 0, 0 }, { 3, 4, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 } };
+
+		try {
+			Sudoku s1 = new Sudoku(puzzle);
+			System.out.print(s1.getRegion(0));
+			s1.ShuffleRegion(0);
+			
+			System.out.print(Arrays.toString(s1.getRegion(0)));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Not a valid puzzle");
+			e.printStackTrace();
+		}
+		
+	}
+	
+	/*@Test
+	public void shuffleArrayTest() {
+		int [] array = {1,2,3,4};
+		System.out.print(array);
+		Sudoku.shuffleArray(array);
+		System.out.print(Arrays.toString(array));
+		System.out.print(array);
+	}*/
 
 }
 

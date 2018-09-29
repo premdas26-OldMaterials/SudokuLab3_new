@@ -267,15 +267,15 @@ public class Sudoku extends LatinSquare {
 	}
 
 	public void PrintPuzzle() {
-		for (int i = 0; i < super.getLatinSquare().length; i++) {
-			for (int j = 0; j < super.getColumn(i).length; j++) {
+		for (int i = 0; i < iSize; i++) {
+			for (int j = 0; j < iSize; j++) {
 				System.out.print(super.getColumn(i)[j] + " ");
 			}
 			System.out.print("\n");
 		}
 	}
-	
-	private void shuffleArray(int[] ar) {
+	///for testing
+	public static void shuffleArray(int[] ar) {
 		List<Integer> arAsList = new ArrayList<Integer>();
 		for(int i:ar) {
 			arAsList.add(i);
@@ -286,7 +286,7 @@ public class Sudoku extends LatinSquare {
 		}
 	}
 	
-	public void setRegion(int r) {
+	public void SetRegion(int r) {
 		int i = (r / iSqrtSize) * iSqrtSize;
 		int j = (r % iSqrtSize) * iSqrtSize;		
 		int jMax = j + iSqrtSize;
@@ -302,5 +302,15 @@ public class Sudoku extends LatinSquare {
 			}
 		}
 	}
+	/// Changed access modifier for testing, change back
+	public void ShuffleRegion(int r) {
+		shuffleArray(getRegion(r));
+	}
 	
+	private void FillDiagonalRegions(){
+		for(int i = 0; i<iSize; i+=iSqrtSize+1){
+ 			SetRegion(i);
+ 			ShuffleRegion(i);
+		}
+	}
 }
