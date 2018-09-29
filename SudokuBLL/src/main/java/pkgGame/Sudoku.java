@@ -275,4 +275,22 @@ public class Sudoku extends LatinSquare {
 	public int getRegionNbr(int iCol, int iRow) {
 		return (iCol / iSqrtSize) + ((iRow / iSqrtSize) * iSqrtSize);
 	}
+	
+	public void setRegion(int r) {
+		int i = (r / iSqrtSize) * iSqrtSize;
+		int j = (r % iSqrtSize) * iSqrtSize;		
+		int jMax = j + iSqrtSize;
+		int iMax = i + iSqrtSize;
+		int cnt=1;
+		int[][] puzzle=super.getLatinSquare();
+		
+		for(;i<iMax;i++) {
+			j = (r % iSqrtSize) * iSqrtSize;
+			for(;j<jMax;j++) {
+				puzzle[i][j]=cnt;
+				cnt++;
+			}
+		}
+		super.setLatinSquare(puzzle);
+	}
 }
