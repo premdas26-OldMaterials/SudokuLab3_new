@@ -7,6 +7,7 @@ import org.apache.commons.lang.ArrayUtils;
 
 import pkgEnum.ePuzzleViolation;
 
+
 public class LatinSquare {
 
 	/**
