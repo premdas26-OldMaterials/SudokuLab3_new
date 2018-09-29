@@ -271,4 +271,5 @@ public class Sudoku extends LatinSquare {
 			System.out.print("\n");
 		}
 	}
+	
 }
