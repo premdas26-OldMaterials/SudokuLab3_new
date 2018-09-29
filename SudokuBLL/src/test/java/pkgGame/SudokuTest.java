@@ -257,9 +257,6 @@ public class SudokuTest {
 		
 		assertTrue(Arrays.equals(Region5, s1.getRegion(5)));
 		
-<<<<<<< HEAD
-	}	
-=======
 	}
 	
 	@Test
@@ -278,6 +275,6 @@ public class SudokuTest {
 		assertTrue(Arrays.equals(s.getRegion(3), ans));
 		
 	}
->>>>>>> branch 'master' of https://github.com/premdas26/SudokuLab3_new.git
+
 }
 
