@@ -241,16 +241,10 @@ public class Sudoku extends LatinSquare {
 	}
 	
 	private void fillDiagonalRegions() {
-		int[] diagonal = new int[iSize];
-		for (int i = 0; i < iSize; i++) {
-			diagonal[i] = i;
+		for (int i = 0, i < iSqrtSize; i++) {
+			setRegion(i);
+			shuffleRegion(i);
 		}
-		shuffleArray(diagonal);
-		int [][] ls = super.getLatinSquare();
-		for (int i = 0; i < iSize, i++) {
-			ls[i][i] = diagonal[i];
-		}
-		super.setLatinSquare(ls);
 	}
 
 	/**
