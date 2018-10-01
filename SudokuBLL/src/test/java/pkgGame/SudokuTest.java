@@ -286,7 +286,7 @@ public class SudokuTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		s.SetRegion(3);
+		s.SetRegion(3); //Tests FillDiagonalRegion because a diagonal is passed, shuffles that array
 		assertTrue(s.isPartialSudoku());
 	}
 }
