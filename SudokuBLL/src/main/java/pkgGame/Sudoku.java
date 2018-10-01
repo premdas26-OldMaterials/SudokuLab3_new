@@ -276,7 +276,7 @@ public class Sudoku extends LatinSquare {
 		}
 	}
 	
-	private void shuffleArray(int[] ar) {
+	public static void shuffleArray(int[] ar) { //Public static for testing should be private and only private
 		List<Integer> arAsList = new ArrayList<Integer>();
 		for(int i:ar) {
 			arAsList.add(i);
@@ -287,7 +287,7 @@ public class Sudoku extends LatinSquare {
 		}
 	}
 	
-	public void SetRegion(int r) {
+	public void SetRegion(int r) { //Public for testing should be private
 		int i = (r / iSqrtSize) * iSqrtSize;
 		int j = (r % iSqrtSize) * iSqrtSize;		
 		int jMax = j + iSqrtSize;
@@ -302,10 +302,9 @@ public class Sudoku extends LatinSquare {
 				cnt++;
 			}
 		}
-		FillDiagonalRegions(); // Tests to see if region is a diagonal and shuffles it if it is
 	}
 	
-	private void ShuffleRegion(int r) {
+	public void ShuffleRegion(int r) { //Public for testing should be private 
 		int [] arr = getRegion(r);
 		int k = 0;
 		shuffleArray(arr);
@@ -324,9 +323,10 @@ public class Sudoku extends LatinSquare {
 		}
 	}
 	
-	private void FillDiagonalRegions(){
+	public void FillDiagonalRegions(){ //Public for testing should be private
 		for(int i = 0; i<iSize; i+=iSqrtSize+1){
- 			ShuffleRegion(i);
+ 			SetRegion(i);
+			ShuffleRegion(i);
 		}
 	}
 }

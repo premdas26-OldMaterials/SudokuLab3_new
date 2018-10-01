@@ -286,8 +286,33 @@ public class SudokuTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		s.SetRegion(3); //Tests FillDiagonalRegion because a diagonal is passed, shuffles that array
+		s.FillDiagonalRegions();
 		assertTrue(s.isPartialSudoku());
+		//s.PrintPuzzle();  can be run to make sure what is being printed is actually shuffled
+	}
+	
+	@Test
+	public void ShuffleRegionTest(){
+		int[][] puzzle= {{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
+		int [] defaultRegion = {1,2,3,4};
+		Sudoku s= null;
+		try {
+			s= new Sudoku(puzzle);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		s.ShuffleRegion(2);
+		assertFalse(s.getRegion(1)==defaultRegion); //Possible test fails, rerun and it should not as that means puzzle was shuffled to original position
+	}
+	
+	@Test
+	public void shuffleArrayTest() {
+		int [] arr = {1,2,3,4,5,6,7};
+		int [] comparisonArray = {1,2,3,4,5,6,7};
+		Sudoku.shuffleArray(arr);
+		assertFalse(arr==comparisonArray); //Possible test fails, rerun and it should not as that means array was shuffled to original position
+		
 	}
 }
 
