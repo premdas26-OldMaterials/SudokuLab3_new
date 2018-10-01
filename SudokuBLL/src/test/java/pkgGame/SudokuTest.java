@@ -258,4 +258,23 @@ public class SudokuTest {
 		assertTrue(Arrays.equals(Region5, s1.getRegion(5)));
 		
 	}
+	
+	@Test
+	public void TestSetRegion() {
+		int[][] puzzle= {{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
+		Sudoku s= null;
+		try {
+			s= new Sudoku(puzzle);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		int ans[]= {1,2,3,4};
+		s.SetRegion(3);
+		
+		assertTrue(Arrays.equals(s.getRegion(3), ans));
+		
+	}
+	
 }
+
