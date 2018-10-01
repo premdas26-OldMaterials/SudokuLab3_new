@@ -270,9 +270,9 @@ public class SudokuTest {
 			e.printStackTrace();
 		}
 		int ans[]= {1,2,3,4};
-		s.SetRegion(3);
+		s.SetRegion(2);
 		
-		assertTrue(Arrays.equals(s.getRegion(3), ans));
+		assertTrue(Arrays.equals(s.getRegion(2), ans));
 		
 	}
 	
@@ -287,7 +287,6 @@ public class SudokuTest {
 			e.printStackTrace();
 		}
 		s.SetRegion(3);
-		
 		assertTrue(s.isPartialSudoku());
 	}
 }
