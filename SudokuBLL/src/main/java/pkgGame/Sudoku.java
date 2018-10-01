@@ -235,12 +235,6 @@ public class Sudoku extends LatinSquare {
 		return true;
 	}
 	
-	private void fillDiagonalRegions() {
-		for (int i = 0, i < iSqrtSize; i++) {
-			setRegion(i);
-			shuffleRegion(i);
-		}
-	}
 
 	/**
 	 * isValidValue - test to see if a given value would 'work' for a given column /

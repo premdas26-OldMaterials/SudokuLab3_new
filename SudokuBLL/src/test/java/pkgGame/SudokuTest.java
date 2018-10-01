@@ -276,5 +276,19 @@ public class SudokuTest {
 		
 	}
 	
+	@Test
+	public void TestFillDiagonalRegions() {
+		int[][] puzzle= {{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
+		Sudoku s= null;
+		try {
+			s= new Sudoku(puzzle);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		s.SetRegion(3);
+		
+		assertTrue(s.isPartialSudoku());
+	}
 }
 
