@@ -302,7 +302,7 @@ public class Sudoku extends LatinSquare {
 				cnt++;
 			}
 		}
-		FillDiagonalRegions();
+		FillDiagonalRegions(); // Tests to see if region is a diagonal and shuffles it if it is
 	}
 	
 	private void ShuffleRegion(int r) {
